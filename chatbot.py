@@ -42,6 +42,13 @@ def weather():
         sys.stdout.write('\b')
     print(weatherprint.format(cityname, temp, description))
     sleep(2.0)
+
+def kill():
+    for i in tqdm (range (101),  
+    desc="Loading…",  
+    ascii=False, ncols=75): 
+        time.sleep(0.01)
+    sys.exit()
         
 
 """LOGIN"""
@@ -150,7 +157,7 @@ def run_quiz(questions):
                score += 1
      print(name+ ", you got", score, "out of", len(questions), "! Well Done!")
      sleep(2.0)
-     print("Thanks for playing the quiz!")
+     print("Thanks for playing the quiz! If you want to re-try the quiz type !quiz later on")
 
  
 run_quiz(questions)
@@ -168,11 +175,29 @@ http://api.openweathermap.org/data/2.5/weather?q='+weathercity+'uk&appid=886705b
 print("\nI can also tell you useful things like the weather!")
 sleep(1.0)
 weather()
-print("If you wouldlike to find out the weather again, just type !weather")
+print("If you would like to find out the weather again, just type !weather")
 """GOOGLE SEARCH"""
 
 print("\nI can also make Google searches!")
 sleep(0.5)
 google()
-print("If you want to access google again, just type: !google")
+print("\nIf you want to access google again, just type: !google")
+
+
+
+while True:
+    commands = input("\nIf you want to find the weather in a different place or search somthing else, type one of the commands below:\n")
+    if commands == '!weather':
+        weather()
+    elif commands == '!google':
+        google()
+    elif commands == '!quiz':
+        print("So you'd like to re-try the quiz...")
+        sleep(1.5)
+        run_quiz(questions)
+    else:
+        print("IDK")
+        kill()
+
+
 
