@@ -1,11 +1,11 @@
 import time
 from time import sleep
-import requests
+import requests # pip install requests
 import sys
 
 """Optional Imports"""
-from tqdm import tqdm 
-from googlesearch import search
+from tqdm import tqdm # pip install tqdm
+from googlesearch import search # pip install google
 
 
 
