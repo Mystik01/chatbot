@@ -1,6 +1,7 @@
 import requests
 import time
 from time import sleep
+import os
 
 from tqdm import tqdm 
 from googlesearch import search
@@ -47,3 +48,7 @@ for _ in range(25):
 print("Here are the top 5 results:")
 for i in search(query, tld="co.in", num=5, stop=5):
     print(i)
+
+
+musicreq = input("What song would you like to hear? Please copy the file path and paste it hear, if you need help go to:\nhttps://url.mystik01.me/help\nPlease paste file path here:  ")
+os.startfile(musicreq)

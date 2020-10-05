@@ -1,0 +1,13 @@
+Commands:
+
+!weather - To find out the weather.
+
+!google - To make a google search.
+
+!quiz - To re-play the quiz.
+
+!music - To play a music file.
+
+!file - To open any file stored on your computer.
+
+!exit - To close the program.

@@ -2,6 +2,7 @@ import time
 from time import sleep
 import requests # pip install requests
 import sys
+import os
 
 """Optional Imports"""
 from tqdm import tqdm # pip install tqdm
@@ -27,7 +28,7 @@ def google():
         print(i)
 
 def weather():
-    weathercity = input("What town/city are you in? ")
+    weathercity = input("What town/city are you in? (GB ONLY) ")
     weather = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+weathercity+',uk&units=metric&appid=886705b4c1182eb1c69f28eb8c520e20')
     data = weather.json()
 
@@ -49,6 +50,14 @@ def kill():
     ascii=False, ncols=75): 
         time.sleep(0.01)
     sys.exit()
+
+def music():
+    musicreq = input("What song would you like to hear? Please copy the file path and paste it hear, if you need help go to:\nhttps://url.mystik01.me/help\nPlease paste file path here:  ")
+    os.startfile(musicreq)
+    
+def fileop():
+    filereq = input("Please paste the file path you would like to open, it can be any file type.\nIf you need help go to: https://url.mystik01.me/help\nEnter path here: ")
+    os.startfile(filereq)
         
 
 """LOGIN"""
@@ -182,11 +191,13 @@ print("\nI can also make Google searches!")
 sleep(0.5)
 google()
 print("\nIf you want to access google again, just type: !google")
+sleep(2.0)
 
+"""Music Player"""
 
 
 while True:
-    commands = input("\nIf you want to find the weather in a different place or search somthing else, type one of the commands below:\n")
+    commands = input("\nType commands here, to see a list of the commands available, type !commands below.\n")
     if commands == '!weather':
         weather()
     elif commands == '!google':
@@ -195,9 +206,16 @@ while True:
         print("So you'd like to re-try the quiz...")
         sleep(1.5)
         run_quiz(questions)
-    else:
-        print("IDK")
+    elif commands == '!music':
+        music()
+    elif commands == '!file':
+        fileop()
+    elif commands == "!commands":
+        os.startfile('commands.txt')
+    elif commands =="!exit":
         kill()
+    else:
+        print("Unkown command! Type !commands for a full list of commands.")
 
 
 
