@@ -193,6 +193,11 @@ google()
 print("\nIf you want to access google again, just type: !google")
 sleep(2.0)
 
+print("To see all available things you can do on Chatbot 2.0, please read this file:")
+sleep(1.0)
+os.startfile('commands.txt')
+sleep(4.0)
+
 """Music Player"""
 
 
@@ -207,14 +212,18 @@ while True:
         sleep(1.5)
         run_quiz(questions)
     elif commands == '!music':
+        print("\n")
         music()
     elif commands == '!file':
+        print("\n")
         fileop()
     elif commands == "!commands":
+        print("\n")
         os.startfile('commands.txt')
     elif commands =="!exit":
         kill()
     else:
+        print("\n")
         print("Unkown command! Type !commands for a full list of commands.")
 
 
